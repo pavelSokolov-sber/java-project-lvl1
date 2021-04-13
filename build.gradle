@@ -6,11 +6,26 @@
  */
 plugins {
     id 'application'
+    id 'checkstyle'
+    id 'com.adarshr.test-logger' version '2.1.1'
     id 'com.github.ben-manes.versions' version '0.38.0'
+    id 'jacoco'
 }
 
 group = 'hexlet.code'
 version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    apply plugin: 'checkstyle'
+
+    dependencies {
+        checkstyle 'com.puppycrawl.tools:checkstyle:8.41'
+    }
+}
 
 application {
     mainClass = 'hexlet.code.App'
@@ -18,4 +33,12 @@ application {
 
 compileJava {
     options.release = 11
+}
+
+run {
+    standardInput = System.in
+}
+
+checkstyle {
+    toolVersion '8.41'
 }
