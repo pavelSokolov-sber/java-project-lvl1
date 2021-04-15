@@ -7,7 +7,7 @@ public class EventGame extends GameAlgorithm {
 
     public Question getQuestion() {
         int task = (int) (Math.random() * Integer.MAX_VALUE);
-        boolean expectedResult = task % 2 == 0;
-        return new Question(String.valueOf(task), String.valueOf(expectedResult));
+        String expectedResult = task % 2 == 0 ? "yes" : "no";
+        return new Question(String.valueOf(task), expectedResult);
     }
 }

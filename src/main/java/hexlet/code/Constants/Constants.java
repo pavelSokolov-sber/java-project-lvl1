@@ -1,6 +1,7 @@
-package hexlet.code.GameUtils;
+package hexlet.code.Constants;
 
 public enum Constants {
+    ANSWER("Your answer: "),
     CONGRATULATIONS("Congratulations, "),
     QUESTION("Question:"),
     CORRECT("Correct!"),

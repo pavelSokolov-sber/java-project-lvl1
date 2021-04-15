@@ -1,6 +1,7 @@
 package hexlet.code.Engine;
 
-import hexlet.code.GameUtils.Constants;
+import hexlet.code.Config.GameConfig;
+import hexlet.code.Constants.Constants;
 
 import java.util.Scanner;
 
@@ -8,12 +9,11 @@ public abstract class GameAlgorithm {
 
     public void startGame(String userName) {
         int correctAnswers = 0;
-        int MAX_CORRECT_ANSWERS = 3;
-        while (correctAnswers < MAX_CORRECT_ANSWERS) {
+        while (correctAnswers < GameConfig.MAX_CORRECT_ANSWERS) {
             Question question = getQuestion();
             System.out.println(Constants.QUESTION + " " + question.getTask());
 
-            System.out.print("Your answer: ");
+            System.out.print(Constants.ANSWER.getMessage());
             Scanner scanner = new Scanner(System.in);
             String actualResult = scanner.nextLine();
 

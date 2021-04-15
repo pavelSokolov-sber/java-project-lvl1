@@ -1,9 +1,9 @@
 package hexlet.code.Engine;
 
 public class Question {
-    private String task;
+    private final String task;
 
-    private String expectedResult;
+    private final String expectedResult;
 
     public Question(String task, String expectedResult) {
         this.task = task;
@@ -14,15 +14,7 @@ public class Question {
         return task;
     }
 
-    public void setTask(String task) {
-        this.task = task;
-    }
-
     public String getExpectedResult() {
         return expectedResult;
-    }
-
-    public void setExpectedResult(String expectedResult) {
-        this.expectedResult = expectedResult;
     }
 }
