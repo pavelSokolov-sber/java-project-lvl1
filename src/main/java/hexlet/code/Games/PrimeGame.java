@@ -5,7 +5,7 @@ import hexlet.code.Engine.Question;
 
 public class PrimeGame extends GameAlgorithm {
     public Question getQuestion() {
-        int task = (int) (Math.random() * 20);
+        int task = ((int) (Math.random() * 20)) + 2;
         String expectedResult = "yes";
         for (int i = 2; i < task; i++) {
             if (task % i == 0) {
