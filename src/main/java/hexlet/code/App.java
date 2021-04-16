@@ -8,8 +8,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         GameAlgorithm game = null;
-        String choice = getChoice();
-        switch (choice) {
+        switch (getChoice()) {
             case "1":
                 new GreetGame().greeting();
                 System.exit(0);
@@ -31,8 +30,7 @@ public class App {
             default:
                 System.exit(0);
         }
-        String userName = new GreetGame().greeting();
-        game.startGame(userName);
+        game.startGame(new GreetGame().greeting());
     }
 
     private static String getChoice() {
@@ -45,7 +43,6 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return new Scanner(System.in).nextLine();
     }
 }
